@@ -12,37 +12,37 @@ defined below.
 In order to successfully complete this project, you must fulfill these requirements. Look for TODO notes in the respective files mentioned here for line-specific instructions.
 
 **In the `src/components/Home.vue` file**
-* Create a form for the user to sign up to the site.
-* Use `v-show` to toggle between the sign up form and the success text
-* Use the `submit` event to trigger the `validateForm` method on the component
-* Validate the form according to the rules in the `Home.vue` file
-* If the form is valid, show the success message; if not, show a warning message on the form
+- [X] Create a form for the user to sign up to the site.
+- [X] Use `v-show` to toggle between the sign up form and the success text
+- [X] Use the `submit` event to trigger the `validateForm` method on the component
+- [X] Validate the form according to the rules in the `Home.vue` file
+- [X] If the form is valid, show the success message; if not, show a warning message on the form
 
 **In the `src/components/Survey.vue` file**
-* Complete the survey form by filling in the TODO notes
-* Use `v-for` loops in the template to create options for the checkbox groups
-* Create a validation method to handle the rules outlined in the component comments
-* Use a `$router.push` statement to move the user to the Secret page
+- [X] Complete the survey form by filling in the TODO notes
+- [X] Use `v-for` loops in the template to create options for the checkbox groups
+- [X] Create a validation method to handle the rules outlined in the component comments
+- [X] Use a `$router.push` statement to move the user to the Secret page
 
 **Create the `src/components/Secret.vue` file**
-* Create a basic component from scratch called `Secret`
-* The content of the `Secret` page should be something you come up with: A favorite tip about web development, a funny joke, a humorous image, etc.
-* Provide links back to the other two pages using `<router-link>` tags in the template
+- [X] Create a basic component from scratch called `Secret`
+- [X] The content of the `Secret` page should be something you come up with: A favorite tip about web development, a funny joke, a humorous image, etc.
+- [X] Provide links back to the other two pages using `<router-link>` tags in the template
 
 **In the `src/router/index.js` file**
-* Import the Survey component properly
-* Import the Secret component properly
-* Add the Survey component at the `/survey` path
-* Add the Secret component at the `/secret` path
+- [X] Import the Survey component properly
+- [X] Import the Secret component properly
+- [X] Add the Survey component at the `/survey` path
+- [X] Add the Secret component at the `/secret` path
 
 ## Stretch Goals
 If you crave an extra challenge, please try these stretch goals:
 
-* Enhance the sign up form to collect additional info, different info, or to use different input types to collect the data
-* Enhance the validation to be more specific (e.g. verify no numbers in the name, or there is an `@` and a `.` in the email address, etc.)
-* Enhance error messages to be more specific (e.g. build a message that mentions which field is causing the problem)
-* Add a navigation element to the `src/App.vue` template, and be sure to use the `router-link-active` class to style the current page link
-* Add more pages of content to the site to practice creating new components from scratch and adding them to the routes Array
+- [ ] Enhance the sign up form to collect additional info, different info, or to use different input types to collect the data
+- [ ] Enhance the validation to be more specific (e.g. verify no numbers in the name, or there is an `@` and a `.` in the email address, etc.)
+- [ ] Enhance error messages to be more specific (e.g. build a message that mentions which field is causing the problem)
+- [ ] Add a navigation element to the `src/App.vue` template, and be sure to use the `router-link-active` class to style the current page link
+- [ ] Add more pages of content to the site to practice creating new components from scratch and adding them to the routes Array
 
 
 ## Vue.js Application Setup
