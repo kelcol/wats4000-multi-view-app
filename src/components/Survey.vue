@@ -1,70 +1,105 @@
 <template>
-<div class="Survey">
+  <div class="Survey">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <router-link to="/">Home</router-link>
+      </li>
+      <li class="breadcrumb-item active">
+        Survey
+      </li>
+    </ol>
 
     <div class="form-container container card bg-warning text-white mb-3">
-    <h1 class="card-header">New Member Survey</h1>
-    <p class="card-title">Please complete the new member survey.</p>
+      <h1 class="card-header">New Member Survey</h1>
+      <p class="card-title">Please complete the new member survey.</p>
 
-    <form class="card-body" v-on:submit.prevent="validateForm">
-      <!--TODO: Work on error messaging:
+      <form class="card-body" v-on:submit.prevent="validateForm">
+        <!--TODO: Work on error messaging:
       - Set timeout
       - Validate and alert for individual fields
       - Use all bootstrap styling -->
-      <p v-show="showError" class="error alert alert-dismissible alert-danger">Dag! You broke it!</p>
+        <p v-show="showError" class="error alert alert-dismissible alert-danger">Dag! You broke it!</p>
 
-      <div class="form-group">
-        <legend for="q1">Q1: How long have you been building websites?
-          <input type="text" id="q1" class="form-control" v-model="q1">
-        </legend>
-      </div>
+        <fieldset class="form-group">
+<legend for="q1">Q1: How long have you been building websites?</legend> 
+          <div class="form-check">
+            <label class="form-check-label" v-for="time in timeOptions">
+              <ol>
+                <li>
+                  <input class="form-check-input" type="radio" v-model="q1" v-bind:value="time.value"> {{ time.text }}
+                </li>
+              </ol>
+            </label>
+          </div>
+        </fieldset>
 
-      <!--TODO: Make vertical -->
-      <fieldset class="form-group">
-        <legend for="q2">Q2: What languages interest you the most?</legend>
-        <div class="form-check">
-          <label class="form-check-label" v-for="language in languageOptions" >
-            <input class="form-check-input" type="checkbox" v-model="q2" v-bind:value="language.value"> {{ language.text }}
-          </label>
+
+
+
+
+
+
+
+
+
+ 
+
+        <!--TODO: Make vertical -->
+        <fieldset class="form-group">
+          <legend for="q2">Q2: What languages interest you the most?</legend>
+          <div class="form-check">
+            <label class="form-check-label" v-for="language in languageOptions">
+              <ol>
+                <li>
+                  <input class="form-check-input" type="checkbox" v-model="q2" v-bind:value="language.value"> {{ language.text }}
+                </li>
+              </ol>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend for="q3">Q3: What other topics interest you?</legend>
+          <div class="form-check">
+            <label class="form-check-label" v-for="topic in topicOptions">
+              <ol>
+                <li>
+                  <input class="form-check-input" type="checkbox" v-model="q3" v-bind:value="topic.value"> {{ topic.text }}
+                </li>
+              </ol>
+            </label>
+          </div>
+        </fieldset>
+
+
+        <div class="form-group">
+          <legend for="q4">Q4: What kinds of websites would you like to build someday?</legend>
+          <textarea class="form-control" id="q4" rows="3" placeholder="Type your response here." v-model="q4"></textarea>
         </div>
-      </fieldset>
 
-      <fieldset class="form-group">
-        <legend for="q3">Q3: What other topics interest you?</legend>
-        <div class="form-check">
-          <label class="form-check-label" v-for="topic in topicOptions">
-            <input class="form-check-input" type="checkbox" v-model="q3" v-bind:value="topic.value"> {{ topic.text }}
-          </label>
+        <div class="form-group"></div>
+
+
+        <div class="form-group">
+          <legend for="q5">Q5: Spaces or tabs?</legend>
+          <select class="form-control" id="q5" v-model="q5">
+            <!--TODO: Disable top option -->
+            <option class="text-muted" value="">Select your preference.</option>
+            <option value="spaces">Spaces</option>
+            <option value="tabs">Tabs</option>
+          </select>
         </div>
-      </fieldset>
-      
 
-      <div class="form-group">
-        <legend for="q4">Q4: What kinds of websites would you like to build someday?</legend>
-        <textarea class="form-control" id="q4" rows="3" placeholder="Type your response here." v-model="q4"></textarea>
-      </div>
+        <p>
+          <input class="btn btn-primary" type="submit" value="Submit">
+        </p>
+      </form>
 
-      <div class="form-group"></div>
-
-
-      <div class="form-group">
-        <legend for="q5">Q5: Spaces or tabs?</legend>
-        <select class="form-control" id="q5" v-model="q5">
-          <!--TODO: Disable top option -->
-          <option class="text-muted" value="">Select your preference.</option>
-          <option value="spaces">Spaces</option>
-          <option value="tabs">Tabs</option>
-        </select>
-      </div>
-
-      <p>
-        <input class="btn btn-primary" type="submit" value="Submit">
-      </p>
-    </form>
-
-  </div>
+    </div>
   </div>
 
 </template>
+
 
 
 <script>
@@ -120,6 +155,36 @@ export default {
         {
             text: 'Multimedia',
             value: 'media'
+        }
+      ],
+      timeOptions: [
+        {
+          text: '0-6 months',
+          value: 'g1'
+        },
+        {
+          text: '6 months to 1 year',
+          value: 'g2'
+        },
+        {
+          text: '1-2 years',
+          value: 'g3'
+        },
+        {
+          text: '3-5 years',
+          value: 'g4'
+        },
+        {
+          text: '5-10 years',
+          value: 'g5'
+        },
+        {
+          text: '10-15 years',
+          value: 'g6'
+        },
+        {
+          text: '15+ years',
+          value: 'g7'
         }
       ]
     }

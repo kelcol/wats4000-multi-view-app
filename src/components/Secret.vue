@@ -1,12 +1,16 @@
 <template>
   <div class="secret">
-    <h1>{{ message }}</h1>
+            <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <router-link to="/">Home</router-link>
+          </li>
+          <li class="breadcrumb-item active">
+            Secret
+          </li>
+        </ol>  
 
-    <ul>
-      <!--TODO: Figure out why text is not white?-->
-      <li type="button" class="text-white btn btn-info btn-lg"><router-link v-bind:to="{ name: 'Home' }">Home</router-link></li>
-      <li type="button" class="btn btn-warning btn-lg"><router-link to="/survey">Survey</router-link></li>
-    </ul>
+    <!--TODO: Make this a meme -->    
+    <h1>{{ message }}</h1>
     
   </div>
 
@@ -16,7 +20,7 @@
 
 <script>
 export default {
-  name: 'Home',
+  name: 'Secret',
   data () {
     return {
       message: 'Always check your dev tools!'

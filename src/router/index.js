@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Survey from '@/components/Survey'
 import Secret from '@/components/Secret'
 
+
 Vue.use(Router)
 
 export default new Router({
@@ -23,5 +24,6 @@ export default new Router({
       name: 'Secret',
       component: Secret
     }
+
   ]
 })
