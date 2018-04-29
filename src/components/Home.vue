@@ -14,7 +14,7 @@
 
     <div class="alert alert-dismissible alert-danger" v-show="showError">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>Dag! You broke it!</strong>
+      <strong>Dag! You broke it! Try again?</strong>
       <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
     </div>      
 
@@ -26,7 +26,7 @@
 
 
       
-      <p><strong>Thank you for signing up!</strong> Please take our new member survey.<br><br><router-link to="Survey" class="btn btn-warning btn-md text-white" type="button">Click here</router-link></p>
+      <p><strong>Thank you for signing up!</strong> Please take our new member survey.<br><br><router-link to="Survey" class="btn btn-warning" type="button">Click here</router-link></p>
 
 </div>
 
@@ -40,7 +40,6 @@
 
 
       <form v-on:submit.prevent="validateForm">
-
         <p>
           <label for="username">Username
             <input class="form-control mr-sm-2" type="text" id="username"v-model="username">
@@ -64,7 +63,6 @@
         <p><input class="btn btn-primary" type="submit" value="Submit"></p>
       </form>
     </div>
-
   </div>
 </template>
 
